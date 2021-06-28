@@ -46,3 +46,9 @@ Packages/packages-lock.json
 ProjectSettings/ProjectVersion.txt
 Packages/manifest.json
 Packages/packages-lock.json
+*.log
+*.log
+Logs/Packages-Update.log
+Packages/manifest.json
+Packages/packages-lock.json
+ProjectSettings/ProjectVersion.txt
