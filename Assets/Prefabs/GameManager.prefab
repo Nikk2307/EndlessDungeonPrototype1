@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 714308472867979784}
-  - component: {fileID: 714308472867979785}
+  - component: {fileID: 462630512}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &714308472867979785
+--- !u!114 &462630512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,8 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19623da21dd3ce5429e2c9e756223a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilePrefabs:
-  - {fileID: 1012037633909954394, guid: 870b224777ff84e4ca0be97450d1df77, type: 3}
-  _spawnPoint: 0
-  _currentLevel: 0
-  _world: {fileID: 0}
+  safeZoneTile: {fileID: 7583405529104784929, guid: be67bb4386dc2d249a1e0da1452bf23b, type: 3}
+  junctionTile: {fileID: 5840332747142684089, guid: e49aa851cdec3dd4aa461c7ed9da65c4, type: 3}
+  worldTransform: {fileID: 0}

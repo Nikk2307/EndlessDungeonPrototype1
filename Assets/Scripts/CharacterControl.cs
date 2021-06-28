@@ -7,7 +7,7 @@ public class CharacterControl : MonoBehaviour
     public int _characterID;
     void Start()
     {
-        _characterID = _characterData.CharacterID;
+        _characterID = _characterData.characterPos;
     }
 
     // Update is called once per frame
