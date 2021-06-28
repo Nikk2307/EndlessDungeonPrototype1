@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1dbfce84c9fbc4695d0bbeb536bdec, type: 3}
+  m_Name: Tank
+  m_EditorClassIdentifier: 
+  Character_Name: Tank
+  CharacterID: 3
+  Health: 100
+  Armor: 50
+  Health_Regen: 20
+  Health_Recovery: 1
+  Melee_Attack: 0
+  Ranged_Attack: 0
+  Attack_Rate: 0
+  Shield: 50
