@@ -44,3 +44,5 @@ Logs/shadercompiler-UnityShaderCompiler.exe1.log
 Logs/shadercompiler-UnityShaderCompiler.exe2.log
 Packages/packages-lock.json
 ProjectSettings/ProjectVersion.txt
+Packages/manifest.json
+Packages/packages-lock.json
