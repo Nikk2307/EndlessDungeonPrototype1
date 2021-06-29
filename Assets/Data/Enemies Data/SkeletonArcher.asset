@@ -9,15 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5ea0bdc846552b45a9e98c53463d413, type: 3}
-  m_Name: Enemy_Range
+  m_Script: {fileID: 11500000, guid: a93103f3b38cfb147b846a39200c76e6, type: 3}
+  m_Name: SkeletonArcher
   m_EditorClassIdentifier: 
-  Enemy_Name: JohnWick
-  Speed: 5
-  EnemyID: 2
   Health: 50
-  Armor: 0
-  Melee_Attack: 0
-  Ranged_Attack: 0
-  Damage: 30
-  Attack_Rate: 0
+  Attack: 25
+  enemyAttackRange: 1
+  enemyType: 1
+  enemyPrefab: {fileID: 406006838792543616, guid: b2e94dc0bf132c54c89ee61cf6feef0a, type: 3}

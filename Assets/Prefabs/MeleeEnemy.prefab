@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2736084960459218527}
   - component: {fileID: 4553584887939548187}
   - component: {fileID: 402563010168656167}
-  - component: {fileID: 7239377122054618580}
   m_Layer: 0
   m_Name: MeleeEnemy
   m_TagString: MeleeEnemy
@@ -82,21 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7239377122054618580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6864025381146125612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6718b133377ea2a4fa5a563d576d4814, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyData: {fileID: 11400000, guid: f3fc396fb0e939d4ba13c217e9570e39, type: 2}
-  _pos1: {fileID: 2864061723284528753, guid: 561a5696589e1144c9c83daa4fa8948e, type: 3}
-  _pos2: {fileID: 1383262382336601618, guid: 05b066aea4a7de44e9f509e32ce93ade, type: 3}
-  _pos3: {fileID: 1432206692567478377, guid: f0750b40221e87b41a58fb34ea8d636f, type: 3}
-  _gameManager: {fileID: 714308472867979785, guid: 5e14e61add78798429de194775194810, type: 3}
-  _mainEnemyPos: {fileID: 0}
