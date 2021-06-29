@@ -7,7 +7,8 @@ public class Junction : MonoBehaviour
     Transform[] spawnPoints;
 
     EnemyDataConfig[] enemyDatas;
-    GameObject[] enemies;
+
+    public GameObject[] enemies;
 
     public void PrepareJunction()
     {

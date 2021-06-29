@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1dbfce84c9fbc4695d0bbeb536bdec, type: 3}
+  m_Script: {fileID: 11500000, guid: 89bf5b04ddb03b44e8cbdd8b9d865019, type: 3}
   m_Name: Tank
   m_EditorClassIdentifier: 
-  Character_Name: Tank
-  CharacterID: 3
-  Health: 100
-  Armor: 50
-  Health_Regen: 20
-  Health_Recovery: 1
-  Melee_Attack: 0
-  Ranged_Attack: 0
-  Attack_Rate: 0
-  Shield: 50
+  health: 500
+  attackDamage: 0
+  attackRate: 0
+  playerType: 2

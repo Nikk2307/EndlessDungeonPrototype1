@@ -15,8 +15,8 @@ public enum EnemyType
 [CreateAssetMenu(fileName = "New Enemy Base Data", menuName = "Create Enemy Base Data")]
 public class EnemyDataConfig : ScriptableObject
 {
-    public float Health;
-    public float Attack;
+    public float health;
+    public float attackDamage;
     public EnemyAttackRange enemyAttackRange;
     public EnemyType enemyType;
     public GameObject enemyPrefab;

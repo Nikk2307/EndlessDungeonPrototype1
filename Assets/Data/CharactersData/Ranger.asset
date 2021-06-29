@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1dbfce84c9fbc4695d0bbeb536bdec, type: 3}
+  m_Script: {fileID: 11500000, guid: 89bf5b04ddb03b44e8cbdd8b9d865019, type: 3}
   m_Name: Ranger
   m_EditorClassIdentifier: 
-  Character_Name: Ranger
-  CharacterID: 2
-  Health: 50
-  Armor: 15
-  Health_Regen: 25
-  Health_Recovery: 1
-  Melee_Attack: 5
-  Ranged_Attack: 35
-  Attack_Rate: 5
-  Shield: 0
+  health: 150
+  attackDamage: 50
+  attackRate: 2
+  playerType: 1

@@ -46,7 +46,20 @@ MonoBehaviour:
   safeZoneTile: {fileID: 7583405529104784929, guid: be67bb4386dc2d249a1e0da1452bf23b, type: 3}
   junctionTile: {fileID: 5840332747142684089, guid: e49aa851cdec3dd4aa461c7ed9da65c4, type: 3}
   worldTransform: {fileID: 0}
-  players: {fileID: 0}
+  playersCentre: {fileID: 0}
+  playerPositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   noOfDepthsToBuild: 2
+  leftStartingPlayer: 2
+  frontStartingPlayer: 0
+  rightStartingPlayer: 1
   baseSkeletonWarrior: {fileID: 11400000, guid: 5c1849b30b5dfc642a35d849e132a5a1, type: 2}
   baseSkeletonArcher: {fileID: 11400000, guid: 9fd875378d660154284c4b1cbcbdbe4c, type: 2}
+  playerPrefabs:
+    warriorPrefab: {fileID: 6781076108536482110, guid: 46eb23f346d5d4c4b99a3672b0c7112c, type: 3}
+    rangerPrefab: {fileID: 2498037003126210238, guid: bbca5a32a9fc3a147b0eb277c266c1f9, type: 3}
+    tankPrefab: {fileID: 8295782950858515775, guid: 77ee5620596fe9943a3b27020ae3d8fb, type: 3}
+  playerRotateSpeed: 10
+  stoppingDistance: 0.1
