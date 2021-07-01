@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93103f3b38cfb147b846a39200c76e6, type: 3}
   m_Name: SkeletonWarrior
   m_EditorClassIdentifier: 
-  Health: 200
-  Attack: 15
+  health: 400
+  attackDamage: 20
+  attackRate: 3
   enemyAttackRange: 0
   enemyType: 0
   enemyPrefab: {fileID: 6864025381146125612, guid: 807ee304c43ae1648833c4fcc733175c, type: 3}

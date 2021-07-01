@@ -6,7 +6,8 @@ public enum PlayerType
 {
     Warrior,
     Ranger,
-    Tank
+    Tank,
+    None
 }
 
 [System.Serializable]
@@ -60,6 +61,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Dictionary<float, Player> players;
 
+    Dictionary<float, Enemy> enemies;
+
     [SerializeField]
     float playerRotateSpeed;
 
@@ -72,17 +75,21 @@ public class GameManager : MonoBehaviour
 
     bool canMove = true;
 
-    bool inCombat = true;
+    bool inCombat = false;
 
     int rotating;
 
     PlayerType playerType;
+
+    Player tempPlayerToSpawn;
 
     Vector3 targetPosition;
 
     GameObject playerPrefabToSpawn, tempGO;
 
     Player targetPlayerToMove;
+
+    float timeSinceCombat, combatStartTime;
 
     private void Awake()
     {
@@ -140,13 +147,15 @@ public class GameManager : MonoBehaviour
             }
 
             tempGO = Instantiate(playerPrefabToSpawn,playerPositions[i].position,playerPositions[i].rotation,playersCentre);
-            players.Add(i, tempGO.GetComponent<Player>());
+            tempPlayerToSpawn = tempGO.GetComponent<Player>();
+            tempPlayerToSpawn.health = tempPlayerToSpawn.playerData.health;
+            players.Add(i, tempPlayerToSpawn);
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             GenerateDungeon();
         }
 
@@ -164,6 +173,55 @@ public class GameManager : MonoBehaviour
         {
             Rotate(-1);
         }
+
+        if (inCombat)
+            TickCombat();
+    }
+
+    void TickCombat()
+    {
+        if (rotating == 0)
+        {
+            for (int i = 0; i < 3;i++)
+            {
+                if (enemies.ContainsKey(i) && enemies[i].health > 0) //Enemy exists and is alive
+                {
+                    //print(players[i].playerData.playerType.ToString() + " is fighting " + enemies[i].enemyData.enemyType.ToString());
+                    if (players[i].playerData.playerType!=PlayerType.None && players[i].health > 0) //Player exists (Not Benched) and is alive
+                    {
+                        timeSinceCombat = Time.time - combatStartTime;
+
+                        if ((players[i].lastTimeAttacked == 0 || (Mathf.Round((timeSinceCombat - players[i].lastTimeAttacked) * 100) / 100) >= players[i].playerData.attackRate)&&players[i].playerData.attackRate!=0)
+                        {
+                            players[i].lastTimeAttacked = timeSinceCombat;
+                            DealDamage(players[i], enemies[i]);
+                        }
+
+                        if (enemies[i].lastTimeAttacked == 0 ||(Mathf.Round((timeSinceCombat - enemies[i].lastTimeAttacked)*100)/100)>=enemies[i].enemyData.attackRate)
+                        {
+                            enemies[i].lastTimeAttacked = timeSinceCombat;
+                            DealDamage(enemies[i],players[i]);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    void DealDamage(Enemy enemy, Player targetPlayer)
+    {
+        targetPlayer.health -= enemy.enemyData.attackDamage;
+        if (targetPlayer.health < 0)
+            targetPlayer.health = 0;
+        print(enemy.enemyData.enemyType+" attacked "+targetPlayer.playerData.playerType + "with " +enemy.enemyData.attackDamage+ "damage" + " health left: "+targetPlayer.health);
+    }
+
+    void DealDamage(Player player, Enemy targetEnemy)
+    {
+        targetEnemy.health -= player.playerData.attackDamage;
+        if (targetEnemy.health < 0)
+            targetEnemy.health = 0;
+        print(player.playerData.playerType + " attacked " + targetEnemy.enemyData.enemyType + "with" +player.playerData.attackDamage + "damage" + " health left: " + targetEnemy.health);
     }
 
     void Rotate(int dir = 1)
@@ -227,6 +285,7 @@ public class GameManager : MonoBehaviour
     public void AdvanceDungeon()
     {
         canMove = false;
+        inCombat = false;
         worldTransform.GetComponent<Animator>().SetTrigger("MakeProgress");
         StartCoroutine(EnableMove());
     }
@@ -240,8 +299,21 @@ public class GameManager : MonoBehaviour
 
         if (collHit)
         {
-            //Initiate Combat
+            InitiateCombat(collHit.GetComponent<Junction>());
         }
+    }
+
+    void InitiateCombat(Junction junction)
+    {
+        enemies = junction.GetEnemies();
+
+        foreach(KeyValuePair<float, Enemy> kvp in enemies)
+        {
+            kvp.Value.health = kvp.Value.enemyData.health;
+        }
+
+        inCombat = true;
+        combatStartTime = Time.time;
     }
 
     public EnemyDataConfig[] GenerateEnemies(int count)

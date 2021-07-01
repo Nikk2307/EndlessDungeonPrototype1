@@ -17,6 +17,7 @@ public class EnemyDataConfig : ScriptableObject
 {
     public float health;
     public float attackDamage;
+    public float attackRate;
     public EnemyAttackRange enemyAttackRange;
     public EnemyType enemyType;
     public GameObject enemyPrefab;

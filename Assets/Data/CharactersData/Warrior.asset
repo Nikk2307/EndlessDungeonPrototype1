@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bf5b04ddb03b44e8cbdd8b9d865019, type: 3}
   m_Name: Warrior
   m_EditorClassIdentifier: 
-  health: 200
-  attackDamage: 20
-  attackRate: 1
+  health: 300
+  attackDamage: 80
+  attackRate: 4
   playerType: 0

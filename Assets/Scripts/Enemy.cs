@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public PlayerDataConfig playerData;
+    public EnemyDataConfig enemyData;
     public float lastTimeAttacked = 0;
     public float health;
 }
